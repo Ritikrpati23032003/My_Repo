@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment  # ✅ Capital D
+metadata:
+  name: express-apps
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: express-app
+  template:
+    metadata:
+      labels:
+        app: express-app
+    spec:
+      containers:
+        - name: express-app
+          image: ritikpati2/serverapp:06
